@@ -1,0 +1,33 @@
+<html>
+    <head>
+            <meta name="google-signin-scope" content="profile email https://www.googleapis.com/auth/calendar.readonly">
+            <meta name="google-signin-client_id" content="109658487444-sg8knhjv8cl6njrarpn52npt9mf39vs1.apps.googleusercontent.com">
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+    </head>
+    <body>
+            <script>
+                function onSignIn(googleUser){
+                    
+
+                }    
+            </script>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <input type="button" value="get calendar list" onclick="
+                fetch('https://www.googleapis.com/calendar/v3/users/me/calendarList?access_token=ya29.GlywBll3D-B1XvLUX-OCS_ll2wALFWbHAvZwuqHUX6QdPFqxAthv9fKtQIogRXmJT8FtvFe6LmXXeQpPL0MmBS0rw7rwa91tjqaVY06l31ss89cysHEYYnYxgEO3dQ')
+                    .then(function(response){
+                        return response.json();
+                    })
+                    .then(function(result){
+                        console.log(result);
+                        var tag = '';
+                        for(var i=0; i<result.items.length; i++){
+                            tag = tag + '<li>'+result.items[i].summary+'</li>';
+                        }
+                        document.querySelector('#cals').innerHTML = tag;
+                    })
+            ">
+            <ul id="cals">
+
+            </ul>
+    </body>
+</html>
