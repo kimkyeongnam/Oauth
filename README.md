@@ -1,7 +1,7 @@
 # OAuth
 Oauth공부
 
-* OAuth란?
+* OAuth란?  
 **Open Authorization, Open Authentication** 라는 의미로  
 애플리케이션(페이스북,구글,트위터)(**Service Provider**)의 유저의 비밀번호를 Third party앱에 제공 없이 인증, 인가를 할 수 있는 오픈 스탠다드 프로토콜이다.  
 OAuth 인증을 통해 애플리케이션 API를 유저대신에 접근할 수 있는 권한을 얻을 수 있다.  
