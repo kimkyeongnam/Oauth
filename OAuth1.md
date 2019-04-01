@@ -1,6 +1,6 @@
 # OAuth1 (=OAuth 1.0)
 
-### 1. OAuth1의 개념
+### [OAuth1의 개념]
 
 |**용어**|**설명**|
 |:--:|:--:|
@@ -16,20 +16,20 @@
 
 <br>
 
-### 2. OAuth 1.0의 WorkFlow
+### [OAuth 1.0의 WorkFlow]
 ![OAuth 1.0](https://user-images.githubusercontent.com/38516906/55337252-4132de80-54d9-11e9-9f9c-1602eac8bb04.png)
 
-[1] (그림에는 없지만) 가장 먼저 Consumer는 Service Provider로부터 Client key와 Secret을 발급 받아야한다. 이것은 Service Provider에 API를 사용할것을 등록하는것과 동시에 Service Provider가 Consmer를 식별할 수 있게 해준다.
-[2] 그림에 A 처럼 Request Token을 요청할 때 Consumer 정보, Signature 정보를 포함하여 Request token을 요청을하고 B의 흐름처럼 Request token을 발급받는다.
-[3] Request Token값을 받은후 Consumer는 C처럼 User를 Service Provider에 인증 사이트로 다이렉트시키고, 유저는 그곳에서 Service Provider에 유저임을 인증하게 된다.
-[4] 그러면 Consumer는 D의 정보처럼 해당 유저가 인증이되면 OAuth_token와 OAuth_verifier를 넘겨준다.
-[5] 그 이후에 Consumer는 OAuth_token와 OAuth_verifier받았다면 E의 흐름처럼 다시 서명을 만들어 Access Token을 요청하게 된다.
-[6] 그리고 Service Provider는 받은 토큰과 서명들이 인증이 되었으면 Access Token을 F의 정보 처럼 넘기게된다.
-[7] 그리고 그 Access Token 및 서명정보를 통해 Service Provider에 Protected Resource에 접근할 수 있게 된다.
+1. (그림에는 없지만) 가장 먼저 Consumer는 Service Provider로부터 Client key와 Secret을 발급 받아야한다. 이것은 Service Provider에 API를 사용할것을 등록하는것과 동시에 Service Provider가 Consmer를 식별할 수 있게 해준다.
+2. 그림에 A 처럼 Request Token을 요청할 때 Consumer 정보, Signature 정보를 포함하여 Request token을 요청을하고 B의 흐름처럼 Request token을 발급받는다.
+3. Request Token값을 받은후 Consumer는 C처럼 User를 Service Provider에 인증 사이트로 다이렉트시키고, 유저는 그곳에서 Service Provider에 유저임을 인증하게 된다.
+4. 그러면 Consumer는 D의 정보처럼 해당 유저가 인증이되면 OAuth_token와 OAuth_verifier를 넘겨준다.
+5. 그 이후에 Consumer는 OAuth_token와 OAuth_verifier받았다면 E의 흐름처럼 다시 서명을 만들어 Access Token을 요청하게 된다.
+6. 그리고 Service Provider는 받은 토큰과 서명들이 인증이 되었으면 Access Token을 F의 정보 처럼 넘기게된다.
+7. 그리고 그 Access Token 및 서명정보를 통해 Service Provider에 Protected Resource에 접근할 수 있게 된다.
 
 <br>
 
-### 3. Request Token 발급 매개변수
+### [Request Token 발급 매개변수]
 Request Token 발급 요청 시 사용하는 매개변수
 
 |**매개변수**|**설명**|
@@ -44,7 +44,7 @@ Request Token 발급 요청 시 사용하는 매개변수
 
 <br>
 
-### 4. Request Token Signature 생성
+### [Request Token Signature 생성]
 OAuth 1.0에서는 Service Provider에게 요청을 할려면 매번 전자 서명을 만들어서 보내야한다.
 
 1. 요청 매개변수를 모두 모은다.
