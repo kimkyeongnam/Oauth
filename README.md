@@ -6,9 +6,12 @@
 
 <br><br>
 
-## OAuth1 (=OAuth 1.0) [[link]](https://github.com/kimkyeongnam/Oauth/blob/master/OAuth1.md)
+### OAuth1 (=OAuth 1.0) [[link]](https://github.com/kimkyeongnam/Oauth/blob/master/OAuth1.md)
 
-## OAuth2 (=OAuth 2.0) [[link]](https://github.com/kimkyeongnam/Oauth/blob/master/OAuth2.md)
+### OAuth2 (=OAuth 2.0) [[link]](https://github.com/kimkyeongnam/Oauth/blob/master/OAuth2.md)
 
 <br><br>
 ## 출처
+* [OAuth.net](https://oauth.net/core/1.0/)
+* [Authorization Code Flow](https://developer.accela.com/docs/construct-authCodeFlow.html)
+* [Naver D2](https://d2.naver.com/helloworld/24942)
