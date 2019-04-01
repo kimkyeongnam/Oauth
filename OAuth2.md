@@ -28,9 +28,9 @@ OAuth 1.0과 OAuth2.0 차이점은 일단 인증 절차 간소화 됨으로써 �
 
 <br>
 
-### 인증 종류
+### [인증 종류]
 총 6가지로 구성되어 있다.
-#### [Authorization Code Grant]
+#### Authorization Code Grant
 일반적인 웹사이트에서 소셜로그인과 같은 인증을 받을 때 가장 많이 쓰는 방식으로 기본적으로 지원하고 있는 방식이다. 
 ![ACG](https://user-images.githubusercontent.com/38516906/55340280-51e65300-54df-11e9-9b1f-a4672b117fd0.png)
 
@@ -42,7 +42,7 @@ OAuth 1.0과 OAuth2.0 차이점은 일단 인증 절차 간소화 됨으로써 �
 6. 그 Access token을 이용하여 Resource server에 자원을 접근할 수 있게 된다.
 7. 그이후에 토큰이 만료된다면 refresh token을 이용하여 토큰을 재발급 받을 수 있다.
 
-#### [Implicit Grant]
+#### Implicit Grant
 Public Client인 브라우저 기반의 애플리케이션(Javascript application)이나 모바일 애플리케이션에서 바로 Resource Server에 접근하여 사용할 수 있는 방식이다.
 ![IG](https://user-images.githubusercontent.com/38516906/55340422-9eca2980-54df-11e9-8ebf-35a37cfb4ed6.png)
 
@@ -53,25 +53,24 @@ Public Client인 브라우저 기반의 애플리케이션(Javascript applicatio
 5. 인증서버는 그 토큰이 유효하다면 토큰의 만기시간과함께 리턴해준다.
 6. 클라이언트는 Resource server에 접근할 수 있게된다.
 
-#### [Resource Owner Password Credentials Grant]
+#### Resource Owner Password Credentials Grant
 Client에 아이디/패스워드를 받아 아이디/패스워드로 직접 access token을 받아오는 방식이다.  
 Client가 신용이 없을 때에는 사용하기에 위험하다는 단점이 있다. 클라이언트가 확실한 신용이 보장될 때 사용할 수 있는 방식이다.
-![ROPCG](![☆여기에저장](https://user-images.githubusercontent.com/38516906/55340527-d8029980-54df-11e9-97af-071d32dda939.png)
-)
+![ROPCG](https://user-images.githubusercontent.com/38516906/55340772-4f382d80-54e0-11e9-9f01-e7845d84e856.png)
 
 1. User가 Id와 Password를 입력한다
 2. 클라이언트는 유저의 id와 password와 클라이언트 정보를 넘긴다.
 3. Authorization sever는 Access token을 넘긴다.
 
-#### [Client Credentials Grant]
+#### Client Credentials Grant
 애플리케이션이 Confidential Client일 때 id와 secret을 가지고 인증하는 방식이다.
 ![CCG](https://user-images.githubusercontent.com/38516906/55340585-f7012b80-54df-11e9-9c8f-68a0a1a1251f.png)
 
 1. 클라이언트 정보를 Authorization server에 넘긴다.
 2. Access Token을 Client에 전달한다.
 
-#### [Device Code Grant]
+#### Device Code Grant
 장치 코드 부여 유형의 브라우저가 없거나 입력이 제한된 장치에서 사용되는 방식이다.
 
-#### [Refresh Token Grant]
+#### Refresh Token Grant
 기존에 저장해둔 리프러시 토큰이 존재할 때 엑세스토큰 재발급 받을 필요가 있을 때 사용한다. 그러면 기존 액세스는 토큰이 만료된다.
