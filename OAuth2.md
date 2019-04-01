@@ -26,6 +26,22 @@ OAuth 1.0과 OAuth2.0 차이점은 일단 인증 절차 간소화 됨으로써 �
 * Device Code Grant
 * Refresh Token Grant
 
+<br>
+
+### 인증 종류
+총 6가지로 구성되어 있다.
+#### Authorization Code Grant
+일반적인 웹사이트에서 소셜로그인과 같은 인증을 받을 때 가장 많이 쓰는 방식으로 기본적으로 지원하고 있는 방식이다. 
+![ACG](https://user-images.githubusercontent.com/38516906/55340280-51e65300-54df-11e9-9b1f-a4672b117fd0.png)
+
+1. 먼저 클라이언트가 Redirect URL을 포함하여 Authorization server 인증 요청을 한다.
+2. AuthorizationServer는 유저에게 로그인창을 제공하여 유저를 인증하게 된다.
+3. AuthorizationServer는 Authorization code를 클라이언트에게 제공해준다.
+4. Client는 코드를 Authorization server에 Access Token을 요청한다.
+5. Authorization 서버는 클라이언트에게 Access token을 발급해준다.
+6. 그 Access token을 이용하여 Resource server에 자원을 접근할 수 있게 된다.
+7. 그이후에 토큰이 만료된다면 refresh token을 이용하여 토큰을 재발급 받을 수 있다.
+
 ### [OAuth1의 개념]
 
 |**용어**|**설명**|
