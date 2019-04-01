@@ -55,7 +55,7 @@ Request Token 발급 요청 시 사용하는 매개변수
 * **Request Token Signature 생성**
 OAuth 1.0에서는 Service Provider에게 요청을 할려면 매번 전자 서명을 만들어서 보내야한다.
 
-1. ~요청 매개변수를 모두 모은다.~
+1. 요청 매개변수를 모두 모은다.
 OAuth_signature를 제외하고 'OAuth_'로 시작하는 OAuth 관련 매개변수를 모은다. 모든 매개변수를 사전순으로 정렬하고 각각의 키(key)와 값(value)에 URL 인코딩(rfc3986)을 적용한다. URL 인코딩을 실시한 결과를 = 형태로 나열하고 각 쌍 사이에는 &을 넣는다. 이렇게 나온 결과 전체에 또 URL 인코딩을 적용한다.
 
 2. 매개변수를 정규화(Normalize)한다.
