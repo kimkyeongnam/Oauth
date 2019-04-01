@@ -11,6 +11,8 @@ OAuth 1.0과 OAuth2.0 차이점은 일단 인증 절차 간소화 됨으로써 �
 * 기능의 단순화, 기능과 규모의 확장성 등을 지원하기 위해 만들어 졌다.
 * 기존의 OAuth1.0은 디지털 서명 기반이었지만 OAuth2.0의 암호화는 https에 맡김으로써 복잡한 디지털 서명에관한 로직을 요구하지 않기때문에 구현 자체가 개발자입장에서 쉬워짐.
 #### 용어 변경
+![flow](https://user-images.githubusercontent.com/38516906/55344443-49dee100-54e8-11e9-80d8-490259cb7586.png)
+
 * Resource Owner : 사용자 (1.0 User해당)
 * Resource Server : REST API 서버 (1.0 Protected Resource)
 * Authorization Server : 인증서버 (API 서버와 같을 수도 있음)(1.0 Service Provider)
