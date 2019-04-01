@@ -1,6 +1,6 @@
 # OAuth1 (=OAuth 1.0)
 
-## OAuth1의 개념
+### 1. OAuth1의 개념
 
 |**용어**|**설명**|
 |:--:|:--:|
@@ -16,7 +16,7 @@
 
 <br>
 
-## OAuth 1.0의 WorkFlow
+### 2. OAuth 1.0의 WorkFlow
 ![OAuth 1.0](https://user-images.githubusercontent.com/38516906/55337252-4132de80-54d9-11e9-9f9c-1602eac8bb04.png)
 
 1. (그림에는 없지만) 가장 먼저 Consumer는 Service Provider로부터 Client key와 Secret을 발급 받아야한다. 이것은 Service Provider에 API를 사용할것을 등록하는것과 동시에 Service Provider가 Consmer를 식별할 수 있게 해준다.
@@ -29,7 +29,7 @@
 
 <br>
 
-## Request Token 발급 매개변수
+### 3. Request Token 발급 매개변수
 Request Token 발급 요청 시 사용하는 매개변수
 
 |**매개변수**|**설명**|
@@ -44,7 +44,7 @@ Request Token 발급 요청 시 사용하는 매개변수
 
 <br>
 
-## Request Token Signature 생성
+### 4. Request Token Signature 생성
 OAuth 1.0에서는 Service Provider에게 요청을 할려면 매번 전자 서명을 만들어서 보내야한다.
 
 1. 요청 매개변수를 모두 모은다.
