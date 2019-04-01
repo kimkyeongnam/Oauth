@@ -21,7 +21,7 @@
 
 <br><br>
 
-### OAuth1
+## OAuth1
 * OAuth 1.0의 WorkFlow
 ![OAuth 1.0](https://user-images.githubusercontent.com/38516906/55337252-4132de80-54d9-11e9-9f9c-1602eac8bb04.png)
 
