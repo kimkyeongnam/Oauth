@@ -35,9 +35,9 @@
 6. 그리고 Service Provider는 받은 토큰과 서명들이 인증이 되었으면 Access Token을 F의 정보 처럼 넘기게된다.
 7. 그리고 그 Access Token 및 서명정보를 통해 Service Provider에 Protected Resource에 접근할 수 있게 된다.
 
+<br>
 * Request Token 발급 매개변수
 Request Token 발급 요청 시 사용하는 매개변수
-<br>
 
 |**매개변수**|**설명**|
 |:--:|:--:|
