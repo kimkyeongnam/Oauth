@@ -47,14 +47,41 @@ Request Token 발급 요청 시 사용하는 매개변수
 ### [Request Token Signature 생성]
 OAuth 1.0에서는 Service Provider에게 요청을 할려면 매번 전자 서명을 만들어서 보내야한다.
 
-1. 요청 매개변수를 모두 모은다.
+1. 요청 매개변수를 모두 모은다.  
 OAuth_signature를 제외하고 'OAuth_'로 시작하는 OAuth 관련 매개변수를 모은다. 모든 매개변수를 사전순으로 정렬하고 각각의 키(key)와 값(value)에 URL 인코딩(rfc3986)을 적용한다. URL 인코딩을 실시한 결과를 = 형태로 나열하고 각 쌍 사이에는 &을 넣는다. 이렇게 나온 결과 전체에 또 URL 인코딩을 적용한다.
 
-2. 매개변수를 정규화(Normalize)한다.
+2. 매개변수를 정규화(Normalize)한다.  
 모든 매개변수를 사전순으로 정렬하고 각각의 키(key)와 값(value)에 URL 인코딩(rfc3986)을 적용한다. URL 인코딩을 실시한 결과를 = 형태로 나열하고 각 쌍 사이에는 &을 넣는다. 이렇게 나온 결과 전체에 또 URL 인코딩을 적용한다.
 
-3. Signature Base String을 만든다.
+3. Signature Base String을 만든다.  
 HTTP method 명(GET 또는 POST), Consumer가 호출한 HTTP URL 주소(매개변수 제외), 정규화한 매개변수를 '&'를 사용해 결합한다. 즉 ‘[GET|POST] + & + [URL 문자열로 매개변수는 제외] + & + [정규화한 매개변수]’ 형태가 된다.
 
-4. 키 생성
+4. 키 생성  
 3번 과정까지 거쳐 생성한 문자열을 암호화한다. 암호화할 때 Consumer Secret Key를 사용한다. Consumer Secret Key는 Consumer가 Service Provider에 사용 등록을 할 때 발급받은 값이다. HMAC-SHA1 등의 암호화 방법을 이용하여 최종적인 OAuth_signature를 생성한다.
+
+<br>
+
+### [Access Token 매개변수]
+|**매개변수**|**설명**|
+|:--:|:--:|
+|OAuth_consumer_key|Consumer를 구별하는 키 값<br>Service Provider는 이 키 값으로 Consumer를 구분한다|
+|OAuth_nonce|Consumer에서 임시로 생성한 임의의 문자열<br>OAuth_timestamp의 값이 같은 요청에서는 유일한 값이어야 한다<br>(악의적인 목적으로 계속 요청을 보내는 것을 막기 위해서)|
+|OAuth_signature|OAuth 인증 정보를 암호화하고 인코딩하여 서명 값<br>OAuth 인증 정보는 매개변수 중에서 OAuth_signature를 제외한 나머지 매개변수와 HTTP 요청 방식을 문자열로 조합한 값이다<br>암호화 방식은 OAuth_signature_method에 정의된다|
+|OAuth_signature_method|OAuth_signature를 암호화하는 방법<br>HMAC-SHA1, HMAC-MD5 등을 사용할 수 있다|
+|OAuth_timestamp|요청을 생성한 시점의 타임스탬프<br>1970년1월 1일 00시 00분 00초 이후의 시간을 초로 환산한 초 단위의 누적 시간이다|
+|OAuth_version|OAuth 사용 버전|
+|OAuth_verifier|Request Token 요청 시 OAuth_callback으로 전달받은 OAuth_verifier 값|
+|OAuth_token|Request Token 요청 시 OAuth_callback으로 전달받은 OAuth_token 값|
+
+<br>
+
+### [API호출을 위한 매개변수]
+|**매개변수**|**설명**|
+|:--:|:--:|
+|OAuth_consumer_key|Consumer를 구별하는 키 값<br>Service Provider는 이 키 값으로 Consumer를 구분한다|
+|OAuth_nonce|Consumer에서 임시로 생성한 임의의 문자열<br>OAuth_timestamp의 값이 같은 요청에서는 유일한 값이어야 한다<br>(악의적인 목적으로 계속 요청을 보내는 것을 막기 위해서)|
+|OAuth_signature|OAuth 인증 정보를 암호화하고 인코딩하여 서명 값<br>OAuth 인증 정보는 매개변수 중에서 OAuth_signature를 제외한 나머지 매개변수와 HTTP 요청 방식을 문자열로 조합한 값이다<br>암호화 방식은 OAuth_signature_method에 정의된다|
+|OAuth_signature_method|OAuth_signature를 암호화하는 방법<br>HMAC-SHA1, HMAC-MD5 등을 사용할 수 있다|
+|OAuth_timestamp|요청을 생성한 시점의 타임스탬프<br>1970년1월 1일 00시 00분 00초 이후의 시간을 초로 환산한 초 단위의 누적 시간이다|
+|OAuth_version|OAuth 사용 버전|
+|OAuth_token|Request Token 요청 시 OAuth_callback으로 전달받은 OAuth_token 값|
