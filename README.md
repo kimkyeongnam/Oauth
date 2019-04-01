@@ -6,6 +6,9 @@
 
 <br><br>
 
-## OAuth1 (=OAuth 1.0)
+## OAuth1 (=OAuth 1.0) [[link]](https://github.com/kimkyeongnam/Oauth/blob/master/OAuth1.md)
 
-## OAuth2 (=OAuth 2.0)
+## OAuth2 (=OAuth 2.0) [[link]](https://github.com/kimkyeongnam/Oauth/blob/master/OAuth2.md)
+
+<br><br>
+## 출처
