@@ -38,6 +38,7 @@
 * Request Token 발급 매개변수
 Request Token 발급 요청 시 사용하는 매개변수
 <br>
+
 |**매개변수**|**설명**|
 |:--:|:--:|
 |OAuth_callback|Service Provider가 인증을 완료한 후 리다이렉트할 Consumer의 웹 주소<br>만약 Consumer가 웹 애플리케이션이 아니라 리다이렉트할 주소가 없다면 소문자로 ‘oob’(Out Of Band라는 뜻)를 값으로 사용한다|
