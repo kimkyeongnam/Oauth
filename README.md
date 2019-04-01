@@ -34,3 +34,16 @@
 5. 그 이후에 Consumer는 OAuth_token와 OAuth_verifier받았다면 E의 흐름처럼 다시 서명을 만들어 Access Token을 요청하게 된다.
 6. 그리고 Service Provider는 받은 토큰과 서명들이 인증이 되었으면 Access Token을 F의 정보 처럼 넘기게된다.
 7. 그리고 그 Access Token 및 서명정보를 통해 Service Provider에 Protected Resource에 접근할 수 있게 된다.
+
+* Request Token 발급 매개변수
+Request Token 발급 요청 시 사용하는 매개변수
+
+|**매개변수**|**설명**|
+|:--:|:--:|
+|OAuth_callback|Service Provider가 인증을 완료한 후 리다이렉트할 Consumer의 웹 주소<br>만약 Consumer가 웹 애플리케이션이 아니라 리다이렉트할 주소가 없다면 소문자로 ‘oob’(Out Of Band라는 뜻)를 값으로 사용한다|
+|OAuth_consumer_key|Consumer를 구별하는 키 값<br>Service Provider는 이 키 값으로 Consumer를 구분한다|
+|OAuth_nonce|Consumer에서 임시로 생성한 임의의 문자열<br>OAuth_timestamp의 값이 같은 요청에서는 유일한 값이어야 한다<br>(악의적인 목적으로 계속 요청을 보내는 것을 막기 위해서)|
+|OAuth_signature|OAuth 인증 정보를 암호화하고 인코딩하여 서명 값<br>OAuth 인증 정보는 매개변수 중에서 OAuth_signature를 제외한 나머지 매개변수와 HTTP 요청 방식을 문자열로 조합한 값이다<br>암화 방식은 OAuth_signature_method에 정의된다<br>|
+|OAuth_signature_method|OAuth_signature를 암호화하는 방법<br>HMAC-SHA1, HMAC-MD5 등을 사용할 수 있다|
+|OAuth_timestamp|요청을 생성한 시점의 타임스탬프<br>1970년1월 1일 00시 00분 00초 이후의 시간을 초로 환산한 초 단위의 누적 시간이다.|
+|OAuth_version|OAuth 사용 버전<br>1.0a는 1.0이라고 명시하면 된다|
